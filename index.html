@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Context — AI Detection Verification</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🔍 Context</h1>
+      <p class="subtitle">Verify if content is AI-generated</p>
+    </div>
+
+    <div class="main-card">
+      <div class="input-section">
+        <label for="contentType">Content Type</label>
+        <select id="contentType">
+          <option value="image">📷 Image</option>
+          <option value="video">🎬 Video</option>
+          <option value="audio">🎧 Audio</option>
+          <option value="text">📝 Text</option>
+        </select>
+
+        <input type="file" id="fileInput" class="file-input" accept="image/*,video/*,audio/*" />
+        <textarea id="textInput" class="text-input" placeholder="Paste text here..." hidden></textarea>
+
+        <div class="button-group">
+          <button id="analyzeBtn" class="btn btn-primary">Analyze Content</button>
+          <button id="clearBtn" class="btn btn-secondary">Clear</button>
+        </div>
+
+        <div id="errorMessage" class="error-message hidden"></div>
+      </div>
+    </div>
+
+    <div id="resultCard" class="result-card hidden">
+      <div class="result-header">
+        <h2>Analysis Results</h2>
+        <button id="closeBtn" class="close-btn">&times;</button>
+      </div>
+      <div id="resultContent" class="result-content"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
